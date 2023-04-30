@@ -9,15 +9,12 @@ def grayCode(n: int):
         gray, reflected = bin, reversed(bin)
     return bin, [int(i, 2) for i in bin]
 
-
 def bin2gray(n: int):
     binary = list(bin(n))[2:]
     xor = binary[:-1]
     gray = [binary.pop(0)]
     gray += [str(int(b) ^ int(x)) for b, x in zip(binary, xor)]
-    gray = ''.join(gray)
-    return gray
-
+    return ''.join(gray)
 
 def main():
     print("This program can generate the Gray encoding with n bits,\nand convert a single decimal number to Gray code as well.\n")
